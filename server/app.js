@@ -23,7 +23,7 @@ app.post('/incidents', (req,res) => {
 
   let incident = new Incident()
 
-  incident.priority = prior
+  incident.priority = priority
 
   incident.save((error) => {
     if(error) {

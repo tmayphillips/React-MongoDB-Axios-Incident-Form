@@ -5,7 +5,18 @@ import axios from 'axios'
     constructor() {
       super()
       this.state = {
-        priority: ''
+        recordID: '',
+        callNumber: '',
+        callDateTime: '',
+        priority: '',
+        district: '',
+        beat: '',
+        description: '',
+        incidentLocation: '',
+        zipcode: '',
+        neighborhood: '',
+        station: '',
+        location: ''
       }
     }
 
@@ -16,14 +27,20 @@ import axios from 'axios'
     }
 
     handleAddIncident = () => {
-      const data = {
-        priority: this.state.priority
-      }
-
-      console.log(data);
 
       axios.post('http://localhost:8080/incidents', {
-        data
+        recordID: this.state.recordID,
+        callNumber: this.state.callNumber,
+        callDateTime: this.state.callDateTime,
+        priority: this.state.priority,
+        district: this.state.district,
+        beat: this.state.beat,
+        description: this.state.description,
+        incidentLocation: this.state.incidentLocation,
+        zipcode: this.state.zipcode,
+        neighborhood: this.state.neighborhood,
+        station: this.state.station,
+        location: this.state.location
       })
     }
 
@@ -32,6 +49,10 @@ import axios from 'axios'
     return(
       <div>
         <h1>Add Incident</h1>
+          <label>Record ID</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='recordID' id='recordID' />
+          <label>Priority (1-4)</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='priority' id='priority' />
           <label>Priority (1-4)</label>
           <input type="text" onChange={this.handleTextBoxChange} name='priority' id='priority' />
           <button onClick={() => this.handleAddIncident()} type='button'>Submit</button>

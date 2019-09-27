@@ -1,25 +1,12 @@
 import React, {Component} from 'react'
+import FetchIncidents from './FetchIncidents'
 
 export class ViewIncidents extends Component {
-  constructor() {
-    super()
-    this.state = {
-      allIncidents: []
-    }
-  }
-
-  componentDidMount() {
-    let url = 'http://localhost:8080/incidents'
-    fetch(url)
-    .then(response => response.json())
-    .then(json => {
-      console.log(json)
-    })
-  }
-
   render() {
     return (
       <div>
+        <h1>Incident List</h1>
+        <FetchIncidents />
       </div>
     )
   }
