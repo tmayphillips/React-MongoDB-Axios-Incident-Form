@@ -19,11 +19,33 @@ mongoose.connect('mongodb://localhost/incidentdb', {useNewUrlParser: true}, (err
 });
 
 app.post('/incidents', (req,res) => {
+  let recordID = req.body.recordID
+  let callNumber = req.body.callNumber
+  let callDateTime = req.body.callDateTime
   let priority = req.body.priority
+  let district = req.body.district
+  let beat = req.body.beat
+  let description = req.body.description
+  let incidentLocation = req.body.incidentLocation
+  let zipcode = req.body.zipcode
+  let neighborhood = req.body.neighborhood
+  let station = req.body.station
+  let location = req.body.location
 
   let incident = new Incident()
 
+  incident.recordID = recordID
+  incident.callNumber = callNumber
+  incident.callDateTime = callDateTime
   incident.priority = priority
+  incident.district = district
+  incident.beat = beat
+  incident.description = description
+  incident.incidentLocation = incidentLocation
+  incident.zipcode = zipcode
+  incident.neighborhood = neighborhood
+  incident.station = station
+  incident.location = location
 
   incident.save((error) => {
     if(error) {

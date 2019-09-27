@@ -50,11 +50,29 @@ import axios from 'axios'
       <div>
         <h1>Add Incident</h1>
           <label>Record ID</label>
-          <input type="text" onChange={this.handleTextBoxChange} name='recordID' id='recordID' />
+          <input type="text" onChange={this.handleTextBoxChange} name='recordID' id='recordID' /><br />
+          <label>Call Number</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='callNumber' id='callNumber' /><br />
+          <label>Call Date and Time</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='callDateTime' id='callDateTime' /><br />
           <label>Priority (1-4)</label>
-          <input type="text" onChange={this.handleTextBoxChange} name='priority' id='priority' />
-          <label>Priority (1-4)</label>
-          <input type="text" onChange={this.handleTextBoxChange} name='priority' id='priority' />
+          <input type="text" onChange={this.handleTextBoxChange} name='priority' id='priority' /><br />
+          <label>District</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='district' id='district' /><br />
+          <label>Beat</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='beat' id='beat' /><br />
+          <label>Description</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='description' id='description' /><br />
+          <label>Incident Location</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='incidentLocation' id='incidentLocation' /><br />
+          <label>Zip Code</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='zipcode' id='zipcode' /><br />
+          <label>Neighborhood</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='neighborhood' id='neighborhood' /><br />
+          <label>Station</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='station' id='station' /><br />
+          <label>Location</label>
+          <input type="text" onChange={this.handleTextBoxChange} name='location' id='location' /><br />
           <button onClick={() => this.handleAddIncident()} type='button'>Submit</button>
 
       </div>
